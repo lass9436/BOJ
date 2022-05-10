@@ -5,7 +5,7 @@ cnt = k
 answer = list()
 
 for num in numbers:
-    while len(answer) > 0 and cnt > 0 and answer[-1] < num:
+    while answer and cnt > 0 and answer[-1] < num:
         del answer[-1]
         cnt -= 1
     answer.append(num)
