@@ -1,24 +1,17 @@
 import sys
 import heapq
 
-heap = []
-
 n = int(sys.stdin.readline())
+
+card = [int(sys.stdin.readline()) for _ in range(n)]
+heapq.heapify(card)
 count = 0
 
-for i in range(n):
-    heapq.heappush(heap, int(sys.stdin.readline()))
-
-while heap:
-    try:
-        previous = heapq.heappop(heap)
-        next = heapq.heappop(heap)
-        sum = previous + next
-        count += sum
-        if not heap:
-            break
-        heapq.heappush(heap, sum)
-    except:
-        break
+while len(card) != 1:
+    first = heapq.heappop(card)
+    second = heapq.heappop(card)
+    sum = first + second
+    count += sum
+    heapq.heappush(card, sum)
     
 print(count)
