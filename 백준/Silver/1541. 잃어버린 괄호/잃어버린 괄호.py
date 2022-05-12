@@ -3,17 +3,11 @@ plus = sys.stdin.readline().split("-")
 
 answer = 0
 
-count = 0
-for i in plus:
-    eq = list(map(int, i.split("+")))
-    for j in eq:
-        if count == 0:
-            answer += j
-        else:
-            answer -= j
-    count += 1
-    
-print(answer)
-            
-    
+for i in plus[0].split("+"):
+    answer += int(i)
+
+for i in plus[1:]:
+    for j in i.split("+"):
+        answer -= int(j)
         
+print(answer)
