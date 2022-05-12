@@ -1,9 +1,7 @@
 import sys
 
 n = int(sys.stdin.readline())
-
 arr = list(map(int, sys.stdin.readline().split()))
-
 s = int(sys.stdin.readline())
 
 for i in range(n):
@@ -14,7 +12,6 @@ for i in range(n):
         if arr[j] > arr[targetIdx]:
             targetIdx = j
     if targetIdx != i:
-
         temp = arr[targetIdx]
         del arr[targetIdx]
         arr.insert(i, temp)
