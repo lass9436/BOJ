@@ -21,5 +21,4 @@ for i in line:
 if len(l) == 0:
     print("FRULA")
 else:
-    for i in l:
-        print(i, end="")
+    print("".join(l))
