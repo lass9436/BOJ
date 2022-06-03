@@ -19,7 +19,7 @@ while queue:
         answer = time
         break
     if position > 0:
-        queue.append((2 * position, time))
+        queue.appendleft((2 * position, time))
         queue.append((position - 1, time + 1))
     queue.append((position + 1, time + 1))        
 
