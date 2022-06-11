@@ -14,11 +14,9 @@ chk = False
 
 def dfs(cur, depth):
     global visited, adj, chk
-    if chk:
-        return
     if depth == 4:
-        chk = True
-        return
+        print(1)
+        exit()
     for i in adj[cur]:
         if not visited[i]:
             visited[i] = True
@@ -29,11 +27,7 @@ def solve():
     global N, chk
     for i in range(N):
         visited[i] = True
-        chk = False
         dfs(i, 0)
-        if chk:
-            print(1)
-            return
         visited[i] = False
     print(0)
     
